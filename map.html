@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Maps - Campus Navigator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Campus Navigator</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="map.html" class="active">Campus Maps</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="directions.html">Directions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h1 class="page-title">Campus Maps</h1>
+            <p class="page-subtitle">Click on any building to view exact campus details</p>
+
+            <div class="map-container">
+                <!-- Campus Map SVG -->
+                <div class="campus-map">
+                    <svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Background -->
+                        <rect width="1000" height="700" fill="#e8f5e9"/>
+                        
+                        <!-- Main Roads -->
+                        <path d="M 0 350 L 1000 350" stroke="#9e9e9e" stroke-width="25" fill="none"/>
+                        <path d="M 500 0 L 500 700" stroke="#9e9e9e" stroke-width="25" fill="none"/>
+                        
+                        <!-- Library (Top Left) -->
+                        <g id="library" class="building-marker" data-building="library">
+                            <rect x="150" y="100" width="150" height="120" fill="#1976d2" rx="8"/>
+                            <text x="225" y="150" text-anchor="middle" fill="white" font-size="18" font-weight="bold">LIBRARY</text>
+                            <circle cx="225" cy="160" r="50" fill="rgba(255,255,255,0.1)" class="pulse"/>
+                        </g>
+                        
+                        <!-- College of Agriculture (Top Right) -->
+                        <g id="cafeteria" class="building-marker" data-building="cafeteria">
+                            <rect x="700" y="100" width="150" height="120" fill="#2e7d32" rx="8"/>
+                            <text x="775" y="140" text-anchor="middle" fill="white" font-size="16" font-weight="bold">AGRICULTURE</text>
+                            <text x="775" y="165" text-anchor="middle" fill="white" font-size="16" font-weight="bold">COLLEGE</text>
+                            <circle cx="775" cy="170" r="50" fill="rgba(255,255,255,0.1)" class="pulse"/>
+                        </g>
+
+                        <!-- Veterinary Campus Gate (Top Center) -->
+                        <g id="vetgate" class="building-marker" data-building="vetgate">
+                            <rect x="425" y="10" width="150" height="120" fill="#1a5c2a" rx="8"/>
+                            <text x="500" y="55" text-anchor="middle" fill="white" font-size="16" font-weight="bold">VET</text>
+                            <text x="500" y="80" text-anchor="middle" fill="white" font-size="16" font-weight="bold">GATE</text>
+                            <circle cx="500" cy="85" r="50" fill="rgba(255,255,255,0.1)" class="pulse"/>
+                        </g>
+                        
+                        <!-- Admin Building (Center) -->
+                        <g id="admin" class="building-marker" data-building="admin">
+                            <rect x="425" y="290" width="150" height="120" fill="#7b1fa2" rx="8"/>
+                            <text x="500" y="335" text-anchor="middle" fill="white" font-size="16" font-weight="bold">ADMIN</text>
+                            <text x="500" y="360" text-anchor="middle" fill="white" font-size="16" font-weight="bold">BUILDING</text>
+                            <circle cx="500" cy="350" r="50" fill="rgba(255,255,255,0.1)" class="pulse"/>
+                        </g>
+                        
+                        <!-- Dormitories (Bottom Left) -->
+                        <g id="dorms" class="building-marker" data-building="dorms">
+                            <rect x="150" y="480" width="150" height="120" fill="#388e3c" rx="8"/>
+                            <text x="225" y="530" text-anchor="middle" fill="white" font-size="16" font-weight="bold">DORMS</text>
+                            <circle cx="225" cy="540" r="50" fill="rgba(255,255,255,0.1)" class="pulse"/>
+                        </g>
+                        
+                        <!-- Science Labs (Bottom Right) -->
+                        <g id="labs" class="building-marker" data-building="labs">
+                            <rect x="700" y="480" width="150" height="120" fill="#0288d1" rx="8"/>
+                            <text x="775" y="520" text-anchor="middle" fill="white" font-size="16" font-weight="bold">SCIENCE</text>
+                            <text x="775" y="545" text-anchor="middle" fill="white" font-size="16" font-weight="bold">LABS</text>
+                            <circle cx="775" cy="540" r="50" fill="rgba(255,255,255,0.1)" class="pulse"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Building Details Panel -->
+                <div class="building-details" id="buildingDetails">
+                    <div class="details-header">
+                        <h2 id="buildingName">Select a Building</h2>
+                        <button class="close-btn" id="closeDetails">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="details-content" id="detailsContent">
+                        <p>Click on any building on the map to view its details.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Legend -->
+            <div class="map-legend">
+                <h3>Map Legend</h3>
+                <div class="legend-items">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #1976d2;"></span>
+                        <span>Library</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #2e7d32;"></span>
+                        <span>College of Agriculture</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #1a5c2a;"></span>
+                        <span>Veterinary Gate</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #7b1fa2;"></span>
+                        <span>Administration</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #388e3c;"></span>
+                        <span>Dormitories</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background: #0288d1;"></span>
+                        <span>Science Labs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Campus Gallery</span>
+                <h2>Campus Highlights</h2>
+                <p>Photos from key campus locations featured on the map.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="photo-card">
+                    <img src="image1/Main-Libary.jpg" alt="Library">
+                    <div class="photo-card-body">
+                        <h3>Library</h3>
+                        <p>Explore our campus library and student learning spaces.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="image1/Haramaya University New Administration Building.jpg" alt="Administration Building">
+                    <div class="photo-card-body">
+                        <h3>Administration</h3>
+                        <p>Administrative offices and student services headquarters.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="image1/Haramaya University Student Dormitory Area Photo.jpg" alt="Dormitories">
+                    <div class="photo-card-body">
+                        <h3>Dormitories</h3>
+                        <p>Student housing located within easy reach of campus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Navigation Shortcuts -->
+    <section class="page-nav-links">
+        <div class="container">
+            <h2>Need to go somewhere fast?</h2>
+            <div class="nav-links-grid">
+                <a href="locations.html" class="nav-link-card">
+                    <i class="fas fa-building"></i>
+                    <div><span>All Locations</span><small>Browse campus facilities</small></div>
+                </a>
+                <a href="directions.html" class="nav-link-card">
+                    <i class="fas fa-directions"></i>
+                    <div><span>Get Directions</span><small>Plan your route quickly</small></div>
+                </a>
+                <a href="index.html" class="nav-link-card">
+                    <i class="fas fa-home"></i>
+                    <div><span>Home</span><small>Return to the homepage</small></div>
+                </a>
+                <a href="contact.html" class="nav-link-card">
+                    <i class="fas fa-envelope"></i>
+                    <div><span>Contact Us</span><small>Ask a question or request support</small></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Campus Navigator</h3>
+                    <p>Your comprehensive guide to navigating campus with ease.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="map.html">Campus Maps</a></li>
+                        <li><a href="locations.html">All Locations</a></li>
+                        <li><a href="directions.html">Get Directions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> info@campus.edu</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Campus Administration</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Campus Navigator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
+</body>
+</html>

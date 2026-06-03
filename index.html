@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haramaya University Navigator - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-university"></i>
+                <span>Haramaya University Navigator</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="map.html">Campus Maps</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="directions.html">Directions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="fade-in">Welcome to Haramaya University Navigator</h1>
+            <p class="fade-in-delay">Your interactive guide to exploring the Haramaya campus</p>
+            <div class="hero-buttons fade-in-delay-2">
+                <a href="map.html" class="btn btn-primary">Explore Map</a>
+                <a href="locations.html" class="btn btn-secondary">View Locations</a>
+            </div>
+        </div>
+        <div class="hero-image-group">
+            <div class="hero-image">
+                <img src="image1/Haramaya University New Administration Building.jpg" alt="Haramaya University administration building">
+            </div>
+            <div class="hero-gate-thumbs">
+                <div class="gate-thumb">
+                    <img src="image1/HrU-Main-Gate.png" alt="Haramaya University main gate">
+                    <span>Main Gate</span>
+                </div>
+                <div class="gate-thumb">
+                    <img src="image1/Haramaya University CVM Gatee.jpg" alt="Haramaya University Veterinary Campus Gate">
+                    <span>Veterinary Campus Gate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Campus Maps</h3>
+                    <p>Click on buildings to view detailed information and explore campus locations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Smart Search</h3>
+                    <p>Quickly find any location on campus with our intelligent search feature</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-directions"></i>
+                    </div>
+                    <h3>Get Directions</h3>
+                    <p>Find the best routes between different campus buildings</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access campus navigation on any device, anywhere, anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access">
+        <div class="container">
+            <h2 class="section-title">Quick Access</h2>
+            <div class="locations-grid">
+                <div class="location-card" data-location="library">
+                    <div class="location-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Library</h3>
+                    <p>Study spaces and resources</p>
+                    <a href="map.html?location=library" class="card-link">View on Map</a>
+                </div>
+                <div class="location-card" data-location="cafeteria">
+                    <div class="location-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>College of Agriculture</h3>
+                    <p>Academic campus for agriculture and research</p>
+                    <a href="map.html?location=cafeteria" class="card-link">View on Map</a>
+                </div>
+                <div class="location-card" data-location="admin">
+                    <div class="location-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Admin Building</h3>
+                    <p>Administrative offices</p>
+                    <a href="map.html?location=admin" class="card-link">View on Map</a>
+                </div>
+                <div class="location-card" data-location="dorms">
+                    <div class="location-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Dormitories</h3>
+                    <p>Student housing</p>
+                    <a href="map.html?location=dorms" class="card-link">View on Map</a>
+                </div>
+                <div class="location-card" data-location="labs">
+                    <div class="location-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Science Labs</h3>
+                    <p>Research facilities</p>
+                    <a href="map.html?location=labs" class="card-link">View on Map</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Campus Photos</span>
+                <h2>Explore Campus in Photos</h2>
+                <p>See featured campus locations and facilities at a glance.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="photo-card">
+                    <img src="image1/Main-Libary.jpg" alt="Campus Library">
+                    <div class="photo-card-body">
+                        <h3>Main Library</h3>
+                        <p>The central campus library with study areas and collections for every student.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="image1/Haramaya University New Administration Building.jpg" alt="Administration Building">
+                    <div class="photo-card-body">
+                        <h3>Administration Building</h3>
+                        <p>Administrative hub for student services, offices, and campus support.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="image1/Haramaya University Student Dormitory Area Photo.jpg" alt="Student Dormitory Area">
+                    <div class="photo-card-body">
+                        <h3>Dormitory Area</h3>
+                        <p>Student housing and residence life, located close to campus facilities.</p>
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="image1/Haramaya University Swimming Pool area Photo.jpg" alt="Swimming Pool Area">
+                    <div class="photo-card-body">
+                        <h3>Recreation & Sports</h3>
+                        <p>Campus recreational spaces where students relax and stay active.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Navigation Shortcuts -->
+    <section class="page-nav-links">
+        <div class="container">
+            <h2>Need to go somewhere fast?</h2>
+            <div class="nav-links-grid">
+                <a href="map.html" class="nav-link-card">
+                    <i class="fas fa-map"></i>
+                    <div><span>Campus Maps</span><small>View buildings and routes</small></div>
+                </a>
+                <a href="locations.html" class="nav-link-card">
+                    <i class="fas fa-building"></i>
+                    <div><span>All Locations</span><small>Browse campus facilities</small></div>
+                </a>
+                <a href="directions.html" class="nav-link-card">
+                    <i class="fas fa-directions"></i>
+                    <div><span>Get Directions</span><small>Plan your route quickly</small></div>
+                </a>
+                <a href="contact.html" class="nav-link-card">
+                    <i class="fas fa-envelope"></i>
+                    <div><span>Contact Us</span><small>Ask a question or request support</small></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Campus Navigator</h3>
+                    <p>Your comprehensive guide to navigating our campus with ease.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="map.html">Campus Maps</a></li>
+                        <li><a href="locations.html">All Locations</a></li>
+                        <li><a href="directions.html">Get Directions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> info@campus.edu</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Campus Navigator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

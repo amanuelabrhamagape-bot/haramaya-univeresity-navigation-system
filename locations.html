@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations - Campus Navigator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Campus Navigator</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="map.html">Campus Maps</a></li>
+                <li><a href="locations.html" class="active">Locations</a></li>
+                <li><a href="directions.html">Directions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Campus Locations</h1>
+            <p>Explore all buildings and facilities on campus</p>
+        </div>
+    </section>
+
+    <!-- Search Bar -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" id="locationSearch" placeholder="Search for a location...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Grid -->
+    <section class="locations-section">
+        <div class="container">
+            <div class="locations-grid" id="locationsGrid">
+                <!-- Library Card -->
+                <div class="location-card-detailed" data-location="library" data-category="academic">
+                    <div class="location-photo"><img src="image1/Main-Libary.jpg" alt="Library"></div>
+                    <div class="card-header" style="background: linear-gradient(135deg, #1976d2, #1565c0);">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>Library</h3>
+                        <p class="location-description">Main campus library with extensive collections, study areas, and computer labs.</p>
+                        <div class="location-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Central Campus</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 10:00 PM</p>
+                            <p><i class="fas fa-phone"></i> (555) 123-4501</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="map.html?location=library" class="btn btn-small btn-primary">View on Map</a>
+                            <a href="directions.html?to=library" class="btn btn-small btn-secondary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- College of Agriculture Card -->
+                <div class="location-card-detailed" data-location="cafeteria" data-category="academic">
+                    <div class="location-photo"><img src="image1/Haramaya University Old stedium or CAES Area Photo agri collage.jpg" alt="College of Agriculture"></div>
+                    <div class="card-header" style="background: linear-gradient(135deg, #2e7d32, #1b5e20);">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>College of Agriculture</h3>
+                        <p class="location-description">The agriculture college offering teaching farms, labs, and research facilities.</p>
+                        <div class="location-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Agriculture Campus</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</p>
+                            <p><i class="fas fa-phone"></i> (555) 123-4502</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="map.html?location=cafeteria" class="btn btn-small btn-primary">View on Map</a>
+                            <a href="directions.html?to=cafeteria" class="btn btn-small btn-secondary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Building Card -->
+                <div class="location-card-detailed" data-location="admin" data-category="services">
+                    <div class="location-photo"><img src="image1/Haramaya University New Administration Building1.jpg" alt="Administration Building"></div>
+                    <div class="card-header" style="background: linear-gradient(135deg, #7b1fa2, #6a1b9a);">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>Administration Building</h3>
+                        <p class="location-description">Central administrative offices including registrar, admissions, and student services.</p>
+                        <div class="location-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Main Campus</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:30 AM - 5:00 PM</p>
+                            <p><i class="fas fa-phone"></i> (555) 123-4500</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="map.html?location=admin" class="btn btn-small btn-primary">View on Map</a>
+                            <a href="directions.html?to=admin" class="btn btn-small btn-secondary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dormitories Card -->
+                <div class="location-card-detailed" data-location="dorms" data-category="facilities">
+                    <div class="location-photo"><img src="image1/Haramaya University Student Dormitory Area Photo.jpg" alt="Student Dormitories"></div>
+                    <div class="card-header" style="background: linear-gradient(135deg, #388e3c, #2e7d32);">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>Dormitories</h3>
+                        <p class="location-description">On-campus student housing with modern amenities and common areas.</p>
+                        <div class="location-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Residential Area</p>
+                            <p><i class="fas fa-clock"></i> 24/7 Access for Residents</p>
+                            <p><i class="fas fa-phone"></i> (555) 123-4503</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="map.html?location=dorms" class="btn btn-small btn-primary">View on Map</a>
+                            <a href="directions.html?to=dorms" class="btn btn-small btn-secondary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Science Labs Card -->
+                <div class="location-card-detailed" data-location="labs" data-category="academic">
+                    <div class="location-photo"><img src="image1/Physics Undergraduate Lab I.jpg" alt="Science Labs"></div>
+                    <div class="card-header" style="background: linear-gradient(135deg, #0288d1, #0277bd);">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="card-body">
+                        <h3>Science Labs</h3>
+                        <p class="location-description">State-of-the-art laboratory facilities for physics, chemistry, and biology.</p>
+                        <div class="location-info">
+                            <p><i class="fas fa-map-marker-alt"></i> Science Building</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 8:00 AM - 6:00 PM</p>
+                            <p><i class="fas fa-phone"></i> (555) 123-4504</p>
+                        </div>
+                        <div class="card-actions">
+                            <a href="map.html?location=labs" class="btn btn-small btn-primary">View on Map</a>
+                            <a href="directions.html?to=labs" class="btn btn-small btn-secondary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No locations found</h3>
+                <p>Try adjusting your search terms</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Navigation Shortcuts -->
+    <section class="page-nav-links">
+        <div class="container">
+            <h2>Need to go somewhere fast?</h2>
+            <div class="nav-links-grid">
+                <a href="map.html" class="nav-link-card">
+                    <i class="fas fa-map"></i>
+                    <div><span>Campus Maps</span><small>View buildings and routes</small></div>
+                </a>
+                <a href="index.html" class="nav-link-card">
+                    <i class="fas fa-home"></i>
+                    <div><span>Home</span><small>Return to the homepage</small></div>
+                </a>
+                <a href="directions.html" class="nav-link-card">
+                    <i class="fas fa-directions"></i>
+                    <div><span>Get Directions</span><small>Plan your route quickly</small></div>
+                </a>
+                <a href="contact.html" class="nav-link-card">
+                    <i class="fas fa-envelope"></i>
+                    <div><span>Contact Us</span><small>Ask a question or request support</small></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Campus Navigator</h3>
+                    <p>Your comprehensive guide to navigating campus with ease.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="map.html">Campus Maps</a></li>
+                        <li><a href="locations.html">All Locations</a></li>
+                        <li><a href="directions.html">Get Directions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> info@campus.edu</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Campus Administration</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Campus Navigator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

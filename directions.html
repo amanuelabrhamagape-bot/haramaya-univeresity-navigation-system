@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directions - Campus Navigator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Campus Navigator</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="map.html">Campus Maps</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="directions.html" class="active">Directions</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Get Directions</h1>
+            <p>Find the best route between campus locations</p>
+        </div>
+    </section>
+
+    <!-- Directions Form -->
+    <section class="directions-section">
+        <div class="container">
+            <div class="directions-container">
+                <div class="directions-form">
+                    <h2>Plan Your Route</h2>
+                    <form id="directionsForm">
+                        <div class="form-group">
+                            <label for="fromLocation">
+                                <i class="fas fa-map-marker-alt"></i> From
+                            </label>
+                            <select id="fromLocation" required>
+                                <option value="">Select starting location</option>
+                                <option value="library">Library</option>
+                                <option value="cafeteria">College of Agriculture</option>
+                                <option value="vetgate">Veterinary Campus Gate</option>
+                                <option value="admin">Administration Building</option>
+                                <option value="dorms">Dormitories</option>
+                                <option value="labs">Science Labs</option>
+                            </select>
+                        </div>
+
+                        <div class="swap-button-container">
+                            <button type="button" id="swapLocations" class="swap-btn">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="toLocation">
+                                <i class="fas fa-flag-checkered"></i> To
+                            </label>
+                            <select id="toLocation" required>
+                                <option value="">Select destination</option>
+                                <option value="library">Library</option>
+                                <option value="cafeteria">College of Agriculture</option>
+                                <option value="vetgate">Veterinary Campus Gate</option>
+                                <option value="admin">Administration Building</option>
+                                <option value="dorms">Dormitories</option>
+                                <option value="labs">Science Labs</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-route"></i> Get Directions
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Directions Result -->
+                <div class="directions-result" id="directionsResult" style="display: none;">
+                    <h2>Your Route</h2>
+                    <div class="route-summary" id="routeSummary"></div>
+                    <div class="route-steps" id="routeSteps"></div>
+                    <button class="btn btn-secondary" id="newRoute">Plan New Route</button>
+                </div>
+            </div>
+
+            <!-- Quick Routes -->
+            <div class="quick-routes">
+                <h2>Popular Routes</h2>
+                <div class="routes-grid">
+                    <div class="route-card" data-from="dorms" data-to="library">
+                        <div class="route-icon">
+                            <i class="fas fa-home"></i>
+                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3>Dorms to Library</h3>
+                        <p>~5 min walk</p>
+                    </div>
+                    <div class="route-card" data-from="library" data-to="cafeteria">
+                        <div class="route-icon">
+                            <i class="fas fa-book"></i>
+                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Library to College of Agriculture</h3>
+                        <p>~4 min walk</p>
+                    </div>
+                    <div class="route-card" data-from="admin" data-to="labs">
+                        <div class="route-icon">
+                            <i class="fas fa-building"></i>
+                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Admin to Labs</h3>
+                        <p>~6 min walk</p>
+                    </div>
+                    <div class="route-card" data-from="cafeteria" data-to="dorms">
+                        <div class="route-icon">
+                            <i class="fas fa-seedling"></i>
+                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>College of Agriculture to Dorms</h3>
+                        <p>~3 min walk</p>
+                    </div>
+                    <div class="route-card" data-from="admin" data-to="vetgate">
+                        <div class="route-icon">
+                            <i class="fas fa-building"></i>
+                            <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-horse-head"></i>
+                        </div>
+                        <h3>Admin to Veterinary Gate</h3>
+                        <p>~5 min walk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Navigation Shortcuts -->
+    <section class="page-nav-links">
+        <div class="container">
+            <h2>Need to go somewhere fast?</h2>
+            <div class="nav-links-grid">
+                <a href="map.html" class="nav-link-card">
+                    <i class="fas fa-map"></i>
+                    <div><span>Campus Maps</span><small>View buildings and routes</small></div>
+                </a>
+                <a href="locations.html" class="nav-link-card">
+                    <i class="fas fa-building"></i>
+                    <div><span>All Locations</span><small>Browse campus facilities</small></div>
+                </a>
+                <a href="contact.html" class="nav-link-card">
+                    <i class="fas fa-envelope"></i>
+                    <div><span>Contact Us</span><small>Ask a question or request support</small></div>
+                </a>
+                <a href="index.html" class="nav-link-card">
+                    <i class="fas fa-home"></i>
+                    <div><span>Home</span><small>Return to the homepage</small></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Campus Navigator</h3>
+                    <p>Your comprehensive guide to navigating campus with ease.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="map.html">Campus Maps</a></li>
+                        <li><a href="locations.html">All Locations</a></li>
+                        <li><a href="directions.html">Get Directions</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> info@campus.edu</p>
+                    <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Campus Administration</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Campus Navigator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/directions.js"></script>
+</body>
+</html>
